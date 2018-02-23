@@ -5,9 +5,9 @@ import { Animal } from './models/animal.model';
   selector: 'app-root',
   template: `
   <h1></h1>
-  <animal-list [animals]="animals" (editAnimalSender)="editAnimal($event)"></animal-list>
+  <animal-list [animals]="animals" (editAnimalSender)="editAnimal($event)" (createAnimalSender)="createAnimalShowForm()"></animal-list>
   <edit-animal [selectedAnimal]="selectedAnimal" (doneEditionSender)="finishedEditing()"></edit-animal>
-  <create-animal [createAnimalControl]="createAnimalControl" (newAnimalSender)="addAnimal($event)" (createAnimalSender)="createAnimalShowForm()"></create-animal>
+  <create-animal [createAnimalControl]="createAnimalControl" (newAnimalSender)="addAnimal($event)"></create-animal>
   `
 })
 

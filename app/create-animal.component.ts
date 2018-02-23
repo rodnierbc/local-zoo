@@ -32,8 +32,10 @@ import { Animal } from './models/animal.model';
      </div>
      <div>
        <label>Sex:</label>
-       <input #newSex type="radio"  [value]="Male">Male<br>
-       <input #newSex type="radio"  [value]="Female">Female<br>
+       <select #newSex>
+         <option [value]="Male"> Male </option>
+         <option [value]="Female"> Female </option>
+       </select>
      </div>
      <div>
        <label>Likes:</label>
