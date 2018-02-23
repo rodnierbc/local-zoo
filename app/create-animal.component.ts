@@ -4,7 +4,6 @@ import { Animal } from './models/animal.model';
 @Component({
   selector: 'create-animal',
   template: `
-  <h1>New Task</h1>
   <div *ngIf="createAnimalControl">
      <div>
        <label>Species:</label>
