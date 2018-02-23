@@ -7,13 +7,8 @@ import { Animal } from './models/animal.model';
     <div>
         <div *ngIf="selectedAnimalView">
           <hr>
-          <label>Enter animal name:</label>
-          <input [(ngModel)]="selectedAnimal.name">
-          <label>Enter animal age:</label>
-          <input [(ngModel)]="selectedAnimal.age">
-          <label>Enter animal caretakers:</label>
-          <input [(ngModel)]="selectedAnimal.caretakers">
-          <button (click)="doneEdition()">Edit</button>
+          <p>name: {{selectedAnimalView.name}}</label>
+          <button (click)="doneView()">Exit</button>
         </div>
       </div>
   `
@@ -24,7 +19,7 @@ export class AnimalViewComponent {
     @Output() doneViewSender = new EventEmitter();
 
 
-    doneEdition() {
+    doneView() {
       this.doneViewSender.emit();
     }
 }

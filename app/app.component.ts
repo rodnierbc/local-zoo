@@ -5,9 +5,10 @@ import { Animal } from './models/animal.model';
   selector: 'app-root',
   template: `
   <h1></h1>
-  <animal-list [animals]="animals" (editAnimalSender)="editAnimal($event)" (createAnimalSender)="createAnimalShowForm()"></animal-list>
+  <animal-list [animals]="animals" (editAnimalSender)="editAnimal($event)" (createAnimalSender)="createAnimalShowForm()" (animalViewSender)="animalView($event)"></animal-list>
   <edit-animal [selectedAnimal]="selectedAnimal" (doneEditionSender)="finishedEditing()"></edit-animal>
   <create-animal [createAnimalControl]="createAnimalControl" (newAnimalSender)="addAnimal($event)"></create-animal>
+  <animal-view [selectedAnimalView]="selectedAnimalView" (doneViewSender)="doneView()"></animal-view>
   `
 })
 
@@ -18,6 +19,7 @@ export class AppComponent {
     new Animal('Ocelot', 'Prince', 4, 'Carnivore', 'Tropical Rain Forest Building', 6, 'Male', 'Laying in the sunshine', 'Toys that are not rope-based')
   ];
   selectedAnimal = null;
+  selectedAnimalView = null;
   createAnimalControl: boolean = false;
 
   editAnimal(animal){
@@ -33,5 +35,11 @@ export class AppComponent {
     this.animals.push(newAnimal);
     this.createAnimalControl= false;
 
+  }
+  animalView(animal){
+    this.selectedAnimalView = animal;
+  }
+  doneView(){
+    this.selectedAnimalView = null;
   }
 }

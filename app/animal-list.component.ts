@@ -15,6 +15,7 @@ import { Animal } from './models/animal.model';
     <li *ngFor="let animal of animals | ageCriteriaFilter:filterByAgeCriteria">
       {{animal.name}} {{animal.age}} {{animal.caretakers}} {{animal.sex}}
       <button (click)="editAnimal(animal)">Edit</button>
+      <button (click)="animalView(animal)">Edit</button>
     </li>
   </ul>
   `
@@ -24,6 +25,7 @@ export class AnimalListComponent {
   @Input() animals: Animal[];
   @Output() editAnimalSender = new EventEmitter();
   @Output() createAnimalSender = new EventEmitter();
+  @Output() animalViewSender = new EventEmitter();
   filterByAgeCriteria: string = "1";
   editAnimal(animal: Animal){
     this.editAnimalSender.emit(animal);
@@ -33,6 +35,9 @@ export class AnimalListComponent {
   }
   onChange(ageCriteriaSelected){
     this.filterByAgeCriteria = ageCriteriaSelected;
+  }
+  animalView(animal: Animal){
+    this.animalViewSender.emit(animal);
   }
 
 }
