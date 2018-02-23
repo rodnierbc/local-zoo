@@ -6,6 +6,7 @@ import { Animal } from './models/animal.model';
   template: `
   <h1></h1>
   <animal-list [animals]="animals" (editAnimalSender)="editAnimal($event)"></animal-list>
+  <edit-animal [selectedAnimal]="selectedAnimal" (doneEditionSender)="finishedEditing()"></edit-animal>
   `
 })
 
@@ -19,5 +20,8 @@ export class AppComponent {
 
   editAnimal(animal){
     this.selectedAnimal = animal;
+  }
+  finishedEditing(){
+    this.selectedAnimal = null;
   }
 }
