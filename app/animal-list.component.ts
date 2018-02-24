@@ -15,7 +15,7 @@ import { Animal } from './models/animal.model';
     <li *ngFor="let animal of animals | ageCriteriaFilter:filterByAgeCriteria">
       {{animal.name}} {{animal.age}} {{animal.caretakers}} {{animal.sex}}
       <button (click)="editAnimal(animal)">Edit</button>
-      <button (click)="animalView(animal)">Edit</button>
+      <button (click)="animalView(animal)">View</button>
     </li>
   </ul>
   `

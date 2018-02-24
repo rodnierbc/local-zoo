@@ -7,7 +7,7 @@ import { Animal } from './models/animal.model';
     <div>
         <div *ngIf="selectedAnimalView">
           <hr>
-          <p>name: {{selectedAnimalView.name}}</label>
+          <p>name: {{selectedAnimalView.name}}</p>
           <button (click)="doneView()">Exit</button>
         </div>
       </div>
