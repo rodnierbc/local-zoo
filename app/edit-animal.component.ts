@@ -20,19 +20,19 @@ import { Animal } from './models/animal.model';
                   <div class="col-md-4">
                       <div class="form-group">
                           <label>Name</label>
-                          <input class="form-control input-sm" type="text" [(ngModel)]="selectedAnimal.name">
+                          <input class="form-control input-sm" type="text" required [(ngModel)]="selectedAnimal.name">
                       </div>
                   </div>
                   <div class="col-md-4">
                       <div class="form-group">
                           <label>Age</label>
-                          <input class="form-control input-sm" type="number" [(ngModel)]="selectedAnimal.age">
+                          <input class="form-control input-sm" type="number" required [(ngModel)]="selectedAnimal.age">
                       </div>
                   </div>
                   <div class="col-md-4">
                       <div class="form-group">
                           <label>Caretakers Number</label>
-                          <input class="form-control input-sm" type="number" [(ngModel)]="selectedAnimal.caretakers">
+                          <input class="form-control input-sm" type="number" required [(ngModel)]="selectedAnimal.caretakers">
                       </div>
                   </div>
                 </div>
@@ -43,7 +43,6 @@ import { Animal } from './models/animal.model';
                       </div>
                   </div>
                 </div>
-
               </div>
           </div>
         </div>

@@ -5,44 +5,86 @@ import { Animal } from './models/animal.model';
   selector: 'create-animal',
   template: `
   <div *ngIf="createAnimalControl">
-     <div>
-       <label>Species:</label>
-       <input #newSpecies>
-     </div>
-     <div>
-       <label>Name:</label>
-       <input #newName>
-     </div>
-     <div>
-       <label>Age:</label>
-       <input #newAge>
-     </div>
-     <div>
-       <label>Diet:</label>
-       <input #newDiet>
-     </div>
-     <div>
-       <label>Location:</label>
-       <input #newLocation>
-     </div>
-     <div>
-       <label>Caretakers:</label>
-       <input #newCaretakers>
-     </div>
-     <div>
-       <label>Sex:</label>
-       <input #newSex>
-     </div>
-     <div>
-       <label>Likes:</label>
-       <input #newLikes>
-     </div>
-     <div>
-       <label>Dislikes:</label>
-       <input #newDislikes>
-     </div>
-      <button class="btn btn-primary" (click)="submitForm(newSpecies.value, newName.value, newAge.value, newDiet.value, newLocation.value, newCaretakers.value, newSex.value, newLikes.value, newDislikes.value); newSpecies.value = ''; newName.value = ''; newAge.value = ''; newDiet.value = ''; newLocation.value = ''; newCaretakers.value = ''; newLikes.value = ''; newDislikes.value = '';">Add</button>
-
+    <div class="card">
+      <div class="alert alert-primary">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="form-group">
+                    <h3>Create Animal</h3>
+                </div>
+            </div>
+        </div>
+      </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Species</label>
+                    <input class="form-control input-sm" required #newSpecies>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input class="form-control input-sm" required #newName>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Age</label>
+                    <input class="form-control input-sm" type="number" required #newAge>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Diet</label>
+                    <input class="form-control input-sm" required #newDiet>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Location</label>
+                    <input class="form-control input-sm" required #newLocation>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Caretakers</label>
+                    <input class="form-control input-sm" type="number" required #newCaretakers>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Sex</label>
+                    <input class="form-control input-sm" required #newSex>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Likes</label>
+                    <textarea class="form-control input-sm" required #newLikes></textarea>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Dislikes</label>
+                    <textarea class="form-control input-sm" required #newDislikes></textarea>
+                </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+                <div class="col-md-3">
+                    <button class="btn btn-primary btn-xs" (click)="submitForm(newSpecies.value, newName.value, newAge.value, newDiet.value, newLocation.value, newCaretakers.value, newSex.value, newLikes.value, newDislikes.value); newSpecies.value = ''; newName.value = ''; newAge.value = ''; newDiet.value = ''; newLocation.value = ''; newCaretakers.value = ''; newLikes.value = ''; newDislikes.value = '';">Add</button>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
   </div>
   `
 })
